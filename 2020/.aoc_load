@@ -1,0 +1,21 @@
+function aoc (){
+if [ $# -eq 0 ]; then
+	printf 'No args\n'
+	return; fi
+cda
+
+i=$1
+if [[ $i -lt 10 ]]; then
+	i=0$1; fi
+
+if [ ! -f Input/d$1.txt ]; then
+	p3 Input/getInput.py $1 > Input/d$1.txt; fi
+
+if [ ! -f d$i.py ]; then
+	echo "# data = open('Input/d$1.txt').read().strip().split('\\\n')
+data = open('test.txt').read().strip().split('\\\n')" >  d$i.py
+	sleep .3; fi
+
+open -a 'google chrome' 'http://www.adventofcode.com/2021/day/'$1 --args --profile-directory='Default'
+open -a "pycharm ce" d$i.py
+}
