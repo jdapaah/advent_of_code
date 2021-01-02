@@ -7,7 +7,7 @@ visited = set()
 def main():
     global n_bodies, visited
     positions = []
-    with open('2019/Input/d12.txt') as file:
+    with open('Input/d12.txt') as file:
         for line in file:
             array = line.strip().split()
             x = int(array[0][3:-1])

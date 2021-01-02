@@ -47,14 +47,14 @@ class Intcode:
                 to_addr = program[self.pointer + 1] + (self.relative_base if len(str(full_opcode)) == 3 else 0)
                 if len(program) <= to_addr:
                     program.extend([0] * (1 + to_addr - len(program)))
-                # dls = ''
-                # while not dls.isdigit() or int(dls) not in range(1, 5):
-                #     dls = inp
-                # last_dir = int(dls)
+                # d = ''
+                # while not d.isdigit() or int(d) not in range(1, 5):
+                #     d = inp
+                # last_dir = int(d)
                 inp = ''
                 while inp == '' or inp not in list('wasd'):
                     inp = input('Input: ')
-                last_dir = {'w': 1, 's': 2, 'a': 3, 'dls': 4}[inp]
+                last_dir = {'w': 1, 's': 2, 'a': 3, 'd': 4}[inp]
 
                 program[to_addr] = last_dir
             elif opcode == 4:  # print from index
