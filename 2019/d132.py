@@ -15,6 +15,7 @@ def main():
 
 
 def run(program, gdict):
+    final_score = 0
     variable = 0
     x, y = 0, 0
 
@@ -62,7 +63,7 @@ def run(program, gdict):
                 y = num1
             else:
                 if x == -1 and y == 0:
-                    print('Score', num1)
+                   final_score = num1
                 else:
                     gdict[(x, y)] = num1
             variable += 1
@@ -92,6 +93,8 @@ def run(program, gdict):
             exit(1)
         pointer = num2 if point_shift else pointer + shift[opcode]
         full_opcode = program[pointer]
+
+    print(final_score)
 
 
 def harvest2(oc, prog, point, rb):
